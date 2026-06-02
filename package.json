@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "MissionSupport — Aplicação de Gestão de Sustento Missionário",
+  "description": "Mission Support — Aplicação de Gestão de Sustento Missionário",
   "scripts": {
     "dev:client": "cd client && npm run start",
     "dev:server": "cd server && npm run dev",

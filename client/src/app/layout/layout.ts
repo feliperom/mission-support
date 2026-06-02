@@ -33,7 +33,7 @@ import { TranslatePipe } from '../core/pipes/translate.pipe';
             </div>
             @if (!sidebarCollapsed() || sidebarOpen()) {
               <div class="animate-fade-in">
-                <h1 class="text-lg font-bold tracking-tight">MissionSupport</h1>
+                <h1 class="text-lg font-bold tracking-tight">Mission Support</h1>
                 <p class="text-xs text-primary-300">{{ 'dashboard.supportProgress' | translate }}</p>
               </div>
             }
@@ -195,7 +195,7 @@ export class Layout {
     { id: 'dashboard', route: '/dashboard', label: 'nav.dashboard', exact: true },
     { id: 'supporters', route: '/supporters', label: 'nav.supporters', exact: false },
     { id: 'offerings', route: '/offerings', label: 'nav.offerings', exact: true },
-    { id: 'calls', route: '/calls', label: 'nav.calls', exact: true },
+    // { id: 'calls', route: '/calls', label: 'nav.calls', exact: true },
     { id: 'reports', route: '/reports', label: 'nav.reports', exact: true },
     { id: 'settings', route: '/settings', label: 'nav.settings', exact: true },
   ];

@@ -1,7 +1,7 @@
 {
   "name": "mission-support-server",
   "version": "1.0.0",
-  "description": "MissionSupport API - Missionary support management backend",
+  "description": "Mission Support API - Missionary support management backend",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {

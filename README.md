@@ -1,4 +1,4 @@
-# MissionSupport
+# Mission Support
 
 Aplicação de Gestão de Sustento Missionário — Plataforma multi-tenant para missionários gerenciarem mantenedores, ofertas e relacionamentos.
 
