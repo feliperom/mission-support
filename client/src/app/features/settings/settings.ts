@@ -1,13 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslatePipe } from '../../core/pipes/translate.pipe';
 import { ApiService } from '../../core/services/api.service';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslatePipe],
+  imports: [CommonModule, FormsModule],
   template: `
     <div class="animate-fade-in max-w-5xl mx-auto space-y-6 pb-12">
       <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Configurações</h1>
