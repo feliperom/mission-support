@@ -1,11 +1,11 @@
-import { Injectable, inject, isDevMode } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = isDevMode() ? '/api' : 'https://mission-support-liart.vercel.app/api';
+  private readonly baseUrl = window.location.hostname === 'localhost' ? '/api' : 'https://mission-support-liart.vercel.app/api';
 
   get<T>(path: string, params?: Record<string, string | number | boolean>): Observable<T> {
     let httpParams = new HttpParams();
