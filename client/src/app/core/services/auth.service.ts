@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from './api.service';
 import { Router } from '@angular/router';
 import { Observable, tap, catchError, of, BehaviorSubject } from 'rxjs';
 
@@ -19,7 +19,7 @@ interface AuthResponse {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly http = inject(HttpClient);
+  private readonly api = inject(ApiService);
   private readonly router = inject(Router);
 
   private readonly _currentUser = signal<User | null>(null);
@@ -66,7 +66,7 @@ export class AuthService {
     this._isLoading.set(true);
     this._error.set(null);
 
-    return this.http.post<AuthResponse>('/api/auth/login', { email, password }).pipe(
+    return this.api.post<AuthResponse>('/auth/login', { email, password }).pipe(
       tap((res) => {
         this.storeTokens(res.accessToken, res.refreshToken);
         this._currentUser.set(res.missionary);
@@ -84,7 +84,7 @@ export class AuthService {
     this._isLoading.set(true);
     this._error.set(null);
 
-    return this.http.post<AuthResponse>('/api/auth/register', { name, email, password }).pipe(
+    return this.api.post<AuthResponse>('/auth/register', { name, email, password }).pipe(
       tap((res) => {
         this.storeTokens(res.accessToken, res.refreshToken);
         this._currentUser.set(res.missionary);
@@ -105,7 +105,7 @@ export class AuthService {
       return of(null);
     }
 
-    return this.http.post<AuthResponse>('/api/auth/refresh', { refreshToken }).pipe(
+    return this.api.post<AuthResponse>('/auth/refresh', { refreshToken }).pipe(
       tap((res) => {
         this.storeTokens(res.accessToken, res.refreshToken);
         this._currentUser.set(res.missionary);
